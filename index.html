@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Map</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="container">
+        <div id="image_container">
+            <img src="Mckay.jpg" usemap="#image_map">
+            <map name="image_map">
+                <area alt="Laie Temple" title="Laie Temple" target="_blank" href="https://churchofjesuschristtemples.org/laie-hawaii-temple/" coords="2777,278,3310,434" shape="rect">
+                <!-- <area alt="Elder McKay" title="Elder McKay" target="_blank" href="https://www.deseret.com/2015/11/4/20575873/historic-monument-marks-byu-hawaii-groundbreaking-site" coords="1571,555,1815,1556" shape="rect"> -->
+                <area alt="Laie Tree" title="Laie Tree" target="_blank" href="https://en.wikipedia.org/wiki/Tree" coords="411,647 403,476 403,476 403,476 772,251 970,354 1328,247 871,472 814,822 616,936 491,730 327,765 259,708 430,628 327,514 350,498 472,586 " shape="polygon">
+
+                <area class="hoverArea" alt="Elder McKay" title="Elder McKay"  onclick="playAudio('1.mp3')" coords="1571,555,1815,1556" shape="rect">
+
+            </map>
+        </div>
+    </div>
+    <audio id="audioPlayer"></audio>
+
+    <script>
+        let playing = false;
+        function playAudio(file) {
+            const audioPlayer = document.getElementById('audioPlayer');
+            audioPlayer.src = file;
+            if(playing === false){
+                audioPlayer.play();
+                playing = true;
+            }else{
+                audioPlayer.pause();
+                audioPlayer.currentTime = 0;
+                playing = false;
+            }
+           
+        }
+    </script>
+
+</body>
+</html>
